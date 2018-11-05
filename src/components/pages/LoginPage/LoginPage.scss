@@ -1,0 +1,99 @@
+.LoginPage{
+
+    $transition-length: .5s;
+
+    position: relative;
+    height: 100%;
+    :global{
+
+        .btn{
+            transition: all ease .3s;
+            cursor: pointer;
+            &:hover{
+                opacity: .6;
+            }
+            &.login{
+                margin-top: 2vw;
+                border-radius: 2.5vw;
+                height: 5vw;
+                width: 15vw;
+                color: white;
+                border: 1px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2vw;
+                font-weight: bold;
+            }
+        }
+
+        .form-row{
+            height: 100%;
+            display: flex;
+            .btn.login{
+                border: 2px solid #8b3bff;
+                color: #8b3bff;
+            }
+            .empty{
+                width: 40vw;
+                transition: all ease $transition-length;
+            }
+            .form{
+                width: 60vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h1{
+                    color: #8b3bff;
+                    //background-image: linear-gradient(147deg, #8b3bff 0%, #420758 74%);
+                }
+                input{
+                    box-sizing: border-box;
+                    margin: 1vw 0;
+                    transition: all ease .3s;
+                    border: 1px solid #ddd;
+                    height: 4vw;
+                    width: 30vw;
+                    border-radius: 0.5vw;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 1vw;
+                    &:hover{
+                        border-color: #8b3bff;
+                        border-width: 2px;
+                    }
+                }
+            }
+
+            &.login{
+                .empty{
+                    width: 0;
+                }
+            }
+        }
+
+        .expl{
+            transition: all ease $transition-length;
+            transform: translateX(0);
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 40vw;
+            
+            background-color: #8b3bff;
+            background-image: linear-gradient(147deg, #8b3bff 0%, #420758 74%);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &.login{
+                transform: translateX(60vw);
+            }
+
+            color: white;
+        }
+
+    }
+}

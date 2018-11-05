@@ -36,5 +36,20 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCX4qXrxXUx-rE4QzeM5fN8WLET1lC1qtc",
+            authDomain: "tracktivity-d7e39.firebaseapp.com",
+            databaseURL: "https://tracktivity-d7e39.firebaseio.com",
+            projectId: "tracktivity-d7e39",
+            storageBucket: "tracktivity-d7e39.appspot.com",
+            messagingSenderId: "106268202517"
+        };
+        firebase.initializeApp(config);
+        window.db = firebase.firestore();
+    </script>
   </body>
 </html>

@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { observer } from "mobx-react"
+import { configure } from 'mobx';
+import styles from './App.scss';
+
+import Routes from './Routes';
+import Store from './Store';
+
+// configure({ enforceActions: true })
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor(){
+        super()
+        this.store = new Store()
+    }
+
+    componentDidMount(){
+        console.log("USER:", this.store.user)
+    }
+
+    render() {
+        return (
+        <div className={styles.App}>
+            <Router>
+                <Routes store={this.store}/>
+            </Router>
+        </div>
+        );
+    }
 }
 
-export default App;
+export default observer(App);
